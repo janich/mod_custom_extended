@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3" type="module" client="site" method="upgrade">
+	<name>mod_custom_extended</name>
+	<author>Janich Rasmussen</author>
+	<creationDate>January 2017</creationDate>
+	<copyright>Copyright (C) 2017 janich.dk. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>me@janich.dk</authorEmail>
+	<authorUrl>www.janich.dk</authorUrl>
+	<version>1.0.0</version>
+	<description>MOD_CUSTOM_EXTENDED_XML_DESCRIPTION</description>
+
+	<files>
+		<filename module="mod_custom_extended">mod_custom_extended.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<folder>fields</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_custom_extended.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_custom_extended.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params" addfieldpath="modules/mod_custom_extended/fields">
+			<fieldset name="basic">
+				
+				<field
+						name="customhtml"
+						type="customextendededitor"
+						editor="codemirror|none"
+						filter="raw"
+						label="MOD_CUSTOM_EXTENDED_FIELD_CUSTOMHTML_LBL"
+						description="MOD_CUSTOM_EXTENDED_FIELD_CUSTOMHTML_LBL" />
+
+			</fieldset>
+
+			<fieldset name="options" >
+
+				<field
+						name="prepare_content"
+						type="radio"
+						label="MOD_CUSTOM_EXTENDED_FIELD_PREPARE_CONTENT_LABEL"
+						description="MOD_CUSTOM_EXTENDED_FIELD_PREPARE_CONTENT_DESC"
+						class="btn-group btn-group-yesno"
+						default="0">
+							<option value="1">JYES</option>
+							<option value="0">JNO</option>
+				</field>
+
+				<field
+						name="backgroundimage"
+						type="media"
+						label="MOD_CUSTOM_EXTENDED_FIELD_BACKGROUNDIMAGE_LABEL"
+						description="MOD_CUSTOM_EXTENDED_FIELD_BACKGROUNDIMAGE_DESC" />
+
+			</fieldset>
+
+			<fieldset name="advanced">
+
+				<field
+						name="layout"
+						type="modulelayout"
+						label="JFIELD_ALT_LAYOUT_LABEL"
+						description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+				<field
+						name="moduleclass_sfx"
+						type="textarea" rows="3"
+						label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+						description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+						name="cache"
+						type="list"
+						default="1"
+						label="COM_MODULES_FIELD_CACHING_LABEL"
+						description="COM_MODULES_FIELD_CACHING_DESC">
+							<option value="1">JGLOBAL_USE_GLOBAL</option>
+							<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+						name="cache_time"
+						type="text"
+						default="900"
+						label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+						description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+
+				<field
+						name="cachemode"
+						type="hidden"
+						default="itemid">
+							<option value="itemid"></option>
+				</field>
+
+			</fieldset>
+
+		</fields>
+	</config>
+</extension>
