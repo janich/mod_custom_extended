@@ -12,15 +12,26 @@ defined('_JEXEC') or die;
 require_once __DIR__ .'/helper.php';
 
 
-$html = $params->get('customhtml', '');
+$html   = $params->get('customhtml', '');
+$css    = $params->get('customcss', '');
+$js     = $params->get('customjs', '');
 
 if ($params->get('prepare_content', 0))
 {
 	$html = ModCustomExtendedHelper::prepare($html);
 }
 
+if ($css)
+{
+	JFactory::getDocument()->addStyleDeclaration($css);
+}
+
+if ($js)
+{
+	JFactory::getDocument()->addScriptDeclaration($js);
+}
+
 $background_image = $params->get('backgroundimage', '');
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx', ''));
-
 
 require JModuleHelper::getLayoutPath('mod_custom_extended', $params->get('layout', 'default'));

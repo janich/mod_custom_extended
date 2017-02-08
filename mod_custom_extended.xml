@@ -7,7 +7,7 @@
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<authorEmail>me@janich.dk</authorEmail>
 	<authorUrl>www.janich.dk</authorUrl>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 	<description>MOD_CUSTOM_EXTENDED_XML_DESCRIPTION</description>
 
 	<files>
@@ -32,8 +32,29 @@
 						type="customextendededitor"
 						editor="codemirror|none"
 						filter="raw"
-						label="MOD_CUSTOM_EXTENDED_FIELD_CUSTOMHTML_LBL"
-						description="MOD_CUSTOM_EXTENDED_FIELD_CUSTOMHTML_LBL" />
+						label="MOD_CUSTOM_EXTENDED_FIELD_CUSTOMHTML_LABEL"
+						description="MOD_CUSTOM_EXTENDED_FIELD_CUSTOMHTML_DESC" />
+
+				<field
+						name="customspacer"
+						type="spacer"
+						hr="true" />
+
+				<field
+						name="customcss"
+						type="customextendededitor"
+						editor="codemirror|none"
+						filter="raw"
+						label="MOD_CUSTOM_EXTENDED_FIELD_CUSTOMCSS_LABEL"
+						description="MOD_CUSTOM_EXTENDED_FIELD_CUSTOMCSS_DESC" />
+
+				<field
+						name="customjs"
+						type="customextendededitor"
+						editor="codemirror|none"
+						filter="raw"
+						label="MOD_CUSTOM_EXTENDED_FIELD_CUSTOMJS_LABEL"
+						description="MOD_CUSTOM_EXTENDED_FIELD_CUSTOMJS_DESC" />
 
 			</fieldset>
 
